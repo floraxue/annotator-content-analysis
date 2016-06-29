@@ -36,7 +36,6 @@ export class TopicHighlighter extends Component {
     }
   }
 
-
   handleNext() {
     this.props.newArticle(this.props.curArticle + 1);
     ReactDOM.findDOMNode(this).scrollIntoView();

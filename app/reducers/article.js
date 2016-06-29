@@ -1,9 +1,9 @@
 // import api from '../api.js';
 
-import articleJsonMock_0 from '../assets/article_0_mock.json';
-import articleJsonMock_9 from '../assets/article_9_mock.json';
+import articleJsonMock_0 from '../assets/mocks/article_0.json';
+import articleJsonMock_9 from '../assets/mocks/article_9.json';
 
-import topicJsonMock from '../assets/topic_0_mock.json';
+import topicJsonMock from '../assets/mocks/topic_0.json';
 
 // NOTE: create mock article routes at `/topics/0` and `/topics/9`
 var articleMock = new Array(9)
