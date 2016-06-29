@@ -50,34 +50,11 @@ function mergeHighlights(list) {
 export function article(state = initialState, action) {
   console.log(action);
   switch (action.type) {
-    case 'ADD_HIGHLIGHT':
-      var newHighlights = state.highlights.concat(
-        { start: action.selection.start,
-          end: action.selection.end,
-          text: action.selection.selectedText,
-          topic: state.currentTopic }
-      ).sort((a,b) => {
-        if (a.start === b.start) {
-          return 0;
-        } else if (a.start < b.start) {
-          return -1;
-        } else {
-          return 1;
-        }
-      });
-      return Object.assign({}, state,
-                           { highlights: mergeHighlights(newHighlights) });
-    // case NEW_ARTICLE:
-    //   api.sendHighlights(state.highlights);
-    //   if (!action.article || action.article >= state.articles.length) {
-    //     return Object.assign({}, state, { articles: api.getArticles(),
-    //                                       highlights: [],
-    //                                       curArticle: 0 });
-    //   }
-    //   return Object.assign({}, state, { highlights: [],
-    //                                     curArticle: state.curArticle + 1 });
     case 'ACTIVATE_TOPIC':
-      return Object.assign({}, state, { currentTopic: action.topic });
+      return {
+      ...state,
+        currentTopic: action.topic
+      }
     case 'GET_ARTICLE':
       return {
         ...state,
